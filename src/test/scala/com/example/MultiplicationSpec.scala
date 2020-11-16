@@ -7,15 +7,9 @@ class MultiplicationSpec extends AnyWordSpec with Matchers {
 
   "Multiplication Spec" should {
     "Do multiplication" in {
-      val five: Dollar = Dollar(5)
-      five.times(2) shouldEqual Dollar(10)
-      five.times(3) shouldEqual Dollar(15)
-    }
-
-    "return true when compare two Dollar object with same amount" in {
-      val five: Dollar = Dollar(5)
-      five shouldEqual Dollar(5)
-      five should not equal Dollar(6)
+      val five: Dollar = new Dollar(5)
+      five.times(2) shouldEqual new Dollar(10)
+      five.times(3) shouldEqual new Dollar(15)
     }
   }
 }
