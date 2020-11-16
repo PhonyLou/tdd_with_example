@@ -1,7 +1,7 @@
 package com.example
 
-case class Franc(amount: Int) {
+class Franc(override val amount: Int) extends Money {
 
-  def times(i: Int): Franc = Franc(amount * i)
+  def times(i: Int): Franc = new Franc(amount * i)
 
 }

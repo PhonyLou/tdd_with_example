@@ -12,6 +12,12 @@ class EqualSpec extends AnyWordSpec with Matchers {
       five shouldEqual new Dollar(5)
       five should not equal new Dollar(6)
     }
+
+    "return true when compare two Franc object with same amount" in {
+      val five: Franc = new Franc(5)
+      five shouldEqual new Franc(5)
+      five should not equal new Franc(6)
+    }
   }
 
 }
