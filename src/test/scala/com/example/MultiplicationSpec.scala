@@ -8,8 +8,8 @@ class MultiplicationSpec extends AnyWordSpec with Matchers {
   "Multiplication Spec" should {
     "Do multiplication" in {
       val five: Dollar = Dollar(5)
-      five.times(2) shouldEqual 10
-      five.times(3) shouldEqual 15
+      five.times(2) shouldEqual Dollar(10)
+      five.times(3) shouldEqual Dollar(15)
     }
 
     "return true when compare two Dollar object with same amount" in {
