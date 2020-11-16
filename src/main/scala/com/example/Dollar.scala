@@ -1,6 +1,7 @@
 package com.example
 
 case class Dollar(amount: Int) {
-  def times(i: Int): Int = amount
+
+  def times(i: Int): Int = amount * i
 
 }
