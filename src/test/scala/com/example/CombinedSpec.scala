@@ -3,7 +3,7 @@ package com.example
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 
-class EqualSpec extends AnyWordSpec with Matchers {
+class CombinedSpec extends AnyWordSpec with Matchers {
 
   "Equal Spec" should {
 
@@ -18,6 +18,21 @@ class EqualSpec extends AnyWordSpec with Matchers {
       five shouldEqual new Franc(5)
       five should not equal new Franc(6)
     }
+  }
+
+  "Multiplication Spec" should {
+    "Do Dollar multiplication" in {
+      val five: Dollar = new Dollar(5)
+      five.times(2) shouldEqual new Dollar(10)
+      five.times(3) shouldEqual new Dollar(15)
+    }
+
+    "Do Franc multiplication" in {
+      val five: Franc = new Franc(5)
+      five.times(2) shouldEqual new Franc(10)
+      five.times(3) shouldEqual new Franc(15)
+    }
+
   }
 
 }
