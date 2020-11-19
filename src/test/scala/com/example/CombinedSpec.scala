@@ -26,13 +26,13 @@ class CombinedSpec extends AnyWordSpec with Matchers {
 
   "Multiplication Spec" should {
     "Do Dollar multiplication" in {
-      val five: Dollar = new Dollar(5)
+      val five: Money = Money.dollar(5)
       five.times(2) shouldEqual new Dollar(10)
       five.times(3) shouldEqual new Dollar(15)
     }
 
     "Do Franc multiplication" in {
-      val five: Franc = new Franc(5)
+      val five: Money = Money.franc(5)
       five.times(2) shouldEqual new Franc(10)
       five.times(3) shouldEqual new Franc(15)
     }
