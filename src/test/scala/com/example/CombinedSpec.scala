@@ -39,4 +39,14 @@ class CombinedSpec extends AnyWordSpec with Matchers {
 
   }
 
+  "Currency" should {
+    "equal USD given dollar" in {
+      "USD" shouldEqual Money.dollar(1).currency
+    }
+
+    "equal CHF given franc" in {
+      "CHF" shouldEqual Money.franc(1).currency
+    }
+  }
+
 }

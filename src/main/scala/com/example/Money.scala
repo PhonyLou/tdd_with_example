@@ -12,6 +12,8 @@ abstract class Money {
   }
 
   def times(multiplier: Int): Money
+
+  def currency(): String
 }
 
 object Money {
