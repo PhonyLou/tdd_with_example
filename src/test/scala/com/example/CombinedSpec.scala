@@ -18,6 +18,10 @@ class CombinedSpec extends AnyWordSpec with Matchers {
       five shouldEqual new Franc(5)
       five should not equal new Franc(6)
     }
+
+    "return false when compare given one is Dollar and another one is Franc" in {
+      new Franc(5) equals new Dollar(5) shouldEqual false
+    }
   }
 
   "Multiplication Spec" should {
