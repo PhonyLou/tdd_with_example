@@ -11,9 +11,9 @@ abstract class Money {
     }
   }
 
-  def times(multiplier: Int): Money
+  protected def times(multiplier: Int): Money
 
-  def currency(): String
+  protected val currency: String
 }
 
 object Money {
