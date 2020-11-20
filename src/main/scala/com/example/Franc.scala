@@ -1,6 +1,6 @@
 package com.example
 
-class Franc(override val amount: Int, currency: String = "CHF") extends Money {
+class Franc(override val amount: Int, currency: String) extends Money {
 
   override val currencyValue: String = currency
 

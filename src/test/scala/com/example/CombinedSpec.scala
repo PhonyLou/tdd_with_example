@@ -14,13 +14,13 @@ class CombinedSpec extends AnyWordSpec with Matchers {
     }
 
     "return true when compare two Franc object with same amount" in {
-      val five: Franc = new Franc(5)
-      five shouldEqual new Franc(5)
-      five should not equal new Franc(6)
+      val five: Franc = new Franc(5, "CHF")
+      five shouldEqual new Franc(5, "CHF" )
+      five should not equal new Franc(6, "CHF")
     }
 
     "return false when compare given one is Dollar and another one is Franc" in {
-      new Franc(5) equals new Dollar(5) shouldEqual false
+      new Franc(5, "CHF") equals new Dollar(5) shouldEqual false
     }
   }
 
@@ -33,8 +33,8 @@ class CombinedSpec extends AnyWordSpec with Matchers {
 
     "Do Franc multiplication" in {
       val five: Money = Money.franc(5)
-      five.times(2) shouldEqual new Franc(10)
-      five.times(3) shouldEqual new Franc(15)
+      five.times(2) shouldEqual new Franc(10, "CHF")
+      five.times(3) shouldEqual new Franc(15, "CHF")
     }
 
   }
