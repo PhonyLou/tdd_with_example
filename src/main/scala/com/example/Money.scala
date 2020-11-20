@@ -1,6 +1,6 @@
 package com.example
 
-abstract class Money(protected val amountInput: Int, protected val currencyInput: String) {
+class Money(protected val amountInput: Int, protected val currencyInput: String) {
 
   protected val amount: Int = amountInput
 
@@ -11,11 +11,13 @@ abstract class Money(protected val amountInput: Int, protected val currencyInput
     }
   }
 
-  def times(multiplier: Int): Money
+  def times(multiplier: Int): Money = ???
 
   protected val currencyValue: String = currencyInput
 
   def currency(): String = currencyValue
+
+  override def toString: String = s"$amount ${currency()}"
 }
 
 object Money {
