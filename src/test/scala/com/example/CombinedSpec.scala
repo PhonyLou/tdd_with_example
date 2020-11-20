@@ -8,9 +8,9 @@ class CombinedSpec extends AnyWordSpec with Matchers {
   "Equal Spec" should {
 
     "return true when compare two Dollar object with same amount" in {
-      val five: Dollar = new Dollar(5)
-      five shouldEqual new Dollar(5)
-      five should not equal new Dollar(6)
+      val five: Dollar = new Dollar(5, "USD")
+      five shouldEqual new Dollar(5, "USD")
+      five should not equal new Dollar(6, "USD")
     }
 
     "return true when compare two Franc object with same amount" in {
@@ -20,15 +20,15 @@ class CombinedSpec extends AnyWordSpec with Matchers {
     }
 
     "return false when compare given one is Dollar and another one is Franc" in {
-      new Franc(5, "CHF") equals new Dollar(5) shouldEqual false
+      new Franc(5, "CHF") equals new Dollar(5, "USD") shouldEqual false
     }
   }
 
   "Multiplication Spec" should {
     "Do Dollar multiplication" in {
       val five: Money = Money.dollar(5)
-      five.times(2) shouldEqual new Dollar(10)
-      five.times(3) shouldEqual new Dollar(15)
+      five.times(2) shouldEqual new Dollar(10, "USD")
+      five.times(3) shouldEqual new Dollar(15, "USD")
     }
 
     "Do Franc multiplication" in {
