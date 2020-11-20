@@ -6,12 +6,12 @@ class Money(protected val amountInput: Int, protected val currencyInput: String)
 
   override def equals(money: Any): Boolean = {
     money match {
-      case m: Money => (m.amount == amount) && getClass.equals(money.getClass)
+      case m: Money => (m.amount == amount) && currency.equals(m.currency)
       case _ => false
     }
   }
 
-  def times(multiplier: Int): Money = ???
+  def times(multiplier: Int): Money = new Money(amount * multiplier, currency)
 
   protected val currencyValue: String = currencyInput
 
