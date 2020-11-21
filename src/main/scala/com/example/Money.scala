@@ -1,6 +1,6 @@
 package com.example
 
-class Money(protected val amount: Int, val currency: String) {
+class Money(val amount: Int, val currency: String) {
 
   override def equals(money: Any): Boolean = {
     money match {

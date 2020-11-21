@@ -13,14 +13,8 @@ class CombinedSpec extends AnyWordSpec with Matchers {
       five should not equal Money.dollar(6)
     }
 
-    "return true when compare two Franc object with same amount" in {
-      val five: Money = Money.franc(5)
-      five shouldEqual new Franc(5, "CHF" )
-      five should not equal new Franc(6, "CHF")
-    }
-
     "return false when compare given one is Dollar and another one is Franc" in {
-      Money.franc(5) equals Money.dollar(5) shouldEqual false
+      Money.franc(5) should not equal Money.dollar(5)
     }
   }
 
