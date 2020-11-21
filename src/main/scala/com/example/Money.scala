@@ -1,6 +1,6 @@
 package com.example
 
-class Money(protected val amount: Int, protected val currency: String) {
+class Money(protected val amount: Int, val currency: String) {
 
   override def equals(money: Any): Boolean = {
     money match {
@@ -15,7 +15,7 @@ class Money(protected val amount: Int, protected val currency: String) {
 }
 
 object Money {
-  def franc(amount: Int) = new Franc(amount, "CHF")
+  def franc(amount: Int) = new Money(amount, "CHF")
 
-  def dollar(amount: Int) = new Dollar(amount, "USD")
+  def dollar(amount: Int) = new Money(amount, "USD")
 }
