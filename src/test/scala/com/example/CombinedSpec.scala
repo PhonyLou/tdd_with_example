@@ -25,11 +25,6 @@ class CombinedSpec extends AnyWordSpec with Matchers {
       five.times(3) shouldEqual Money.dollar(15)
     }
 
-    "Do Franc multiplication" in {
-      val five: Money = Money.franc(5)
-      five.times(2) shouldEqual Money.franc(10)
-      five.times(3) shouldEqual Money.franc(15)
-    }
 
   }
 
