@@ -1,8 +1,8 @@
 package com.example
 
-class Money(val amount: Int, val currency: String) {
+class Money(val amount: Int, val currency: String) extends Expression {
 
-  def plus(money: Money) = new Money(amount + money.amount, currency)
+  def plus(money: Money): Expression = new Money(amount + money.amount, currency)
 
 
   override def equals(money: Any): Boolean = {
