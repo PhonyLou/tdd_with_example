@@ -2,6 +2,9 @@ package com.example
 
 class Money(val amount: Int, val currency: String) {
 
+  def plus(money: Money) = new Money(amount + money.amount, currency)
+
+
   override def equals(money: Any): Boolean = {
     money match {
       case m: Money => (m.amount == amount) && currency.equals(m.currency)

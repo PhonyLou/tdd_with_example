@@ -38,4 +38,11 @@ class CombinedSpec extends AnyWordSpec with Matchers {
     }
   }
 
+  "Add spec" should {
+    "return sum value give two dollar" in {
+      val sum = Money.dollar(5).plus(Money.dollar(5))
+      sum shouldEqual Money.dollar(10)
+    }
+  }
+
 }
