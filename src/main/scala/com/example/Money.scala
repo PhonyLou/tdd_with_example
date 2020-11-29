@@ -2,7 +2,7 @@ package com.example
 
 class Money(val amount: Int, val currency: String) extends Expression {
 
-  def plus(money: Money): Expression = new Money(amount + money.amount, currency)
+  def plus(addend: Money): Sum = new Sum(this, addend)
 
 
   override def equals(money: Any): Boolean = {

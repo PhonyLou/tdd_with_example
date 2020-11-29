@@ -51,6 +51,21 @@ class CombinedSpec extends AnyWordSpec with Matchers {
       val reduced: Money = bank.reduce(sum, "USD")
       Money.dollar(10) shouldEqual reduced
     }
+
+    "test plus returns Sum" in {
+      val five = Money.dollar(5)
+      val result = five.plus(five)
+      val sum: Sum = result
+      five shouldEqual sum.augend
+      five shouldEqual sum.addend
+    }
+
+    "test reduce Sum" in {
+      val sum: Expression = new Sum(Money.dollar(3), Money.dollar(4))
+      val bank = new Bank()
+      val reduced: Money = bank.reduce(sum, "USD")
+      Money.dollar(7) shouldEqual reduced
+    }
   }
 
 }
