@@ -2,6 +2,9 @@ package com.example
 
 class Money(val amount: Int, val currency: String) extends Expression {
 
+  override def reduce(to: String): Money = this
+
+
   def plus(addend: Money): Sum = new Sum(this, addend)
 
 
