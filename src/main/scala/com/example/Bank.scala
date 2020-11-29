@@ -1,11 +1,12 @@
 package com.example
 
-class Bank() {
+class Bank {
 
   def reduce(source: Expression, to: String): Money = {
-    val sum: Sum = source.asInstanceOf[Sum]
-    val amount = sum.augend.amount + sum.addend.amount
-    new Money(amount, to)
+    source match {
+      case m: Money => m
+      case s: Sum => s.reduce(to)
+    }
   }
 
 }
